@@ -1,0 +1,34 @@
+extends layout
+
+block content
+    p.lead #{title}
+        .alert.alert-warning #{title_warning}
+                          
+   
+    .alert.alert-success
+        ol  
+            #messages
+            
+    form(action='#')
+            input(id='m', autocomplete='off') 
+            button(type='submit') Send
+    div
+        a(href='/' class='glyphicon glyphicon-home')
+    
+    
+block page_specific_script
+    //to send chat message as well as 
+      capture what is broadcasted     
+
+    script(src='/socket-io/socket.io.js')
+    script.
+        var socket = io();
+        $('form').submit(function(){
+            socket.emit('chat message', $('#m').val());
+            $('#m').val('');
+            return false;
+        });
+        socket.on('chat message', function(msg){
+               $('#messages').append($('<li>').text(msg));
+              
+            });

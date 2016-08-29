@@ -1,0 +1,7 @@
+extends layout
+
+block content
+    if success 
+        .alert.alert-success #{status_string} 
+    else 
+        .alert.alert-danger #{status_string}

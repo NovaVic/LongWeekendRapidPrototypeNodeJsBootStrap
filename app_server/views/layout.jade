@@ -1,0 +1,83 @@
+doctype html
+html
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title= title
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body       
+    .navbar.navbar-default
+       .container-fluid
+        .navbar-header
+            btn(class='navbar-toggle', data-toggle='collapse' , data-target='#masanavbar-content')
+               span.icon-bar
+               span.icon-bar
+               span.icon-bar
+            a(href='#', class='navbar-brand') Music as Second Aid 
+        .navbar-collapse.collapse#masanavbar-content
+                ul(class='nav navbar-nav')
+                    li
+                        a(href="/") Home
+                    li
+                        a(href='/newuser') New User
+                    //li
+                        a(href='/comments') Buddy System 
+                    li
+                        a(href='/therapists_of_the_month') Therapists of the Month   
+                            span(class='label label-success')  New
+                    li.dropdown                      
+                        a(href='#' class='dropdown-toggle' data-toggle='dropdown') About
+                            ul.dropdown-menu
+                                li
+                                    a(href='#')  Mission and Vision Statement
+                                li
+                                    a(href='#')  Team
+                                
+                                li.divider
+                                
+                                li
+                                    a(href='#')  Investors
+                                li
+                                    a(href='#')  Shareholders
+                                li.divider    
+                                
+                                li
+                                    a(href='#')  Careers
+                                
+                    li
+                        a(href='#') Contact Us
+                        
+                    li
+                      form.form-horizontal(class="navbar-form")
+                        input(type="email", name="emailfield", placeholder="Search user by email", class="form-control", required)
+                        button(class="btn btn-info" href="/api/userSearch/:{#emailfield}")
+                           span(class="glyphicon glyphicon-search")
+                //form.form-horizontal( action="/api/userSearch", method = "get",class="navbar-form")
+                    .input-group
+                        div 
+                            input(type="email", name="emailfield", placeholder="Search user by email", class="form-control", required)
+
+                            button(class="btn btn-info")
+                                    span(class="glyphicon glyphicon-search")
+           
+      
+    block content
+    
+   
+    block extra    
+        
+    footer
+      .row
+       .col-xs-12
+        small &copy; OrpheusKey 2016
+    //script(src='/javascripts/jquery-3.1.0.min.js')
+
+    script(src='/javascripts/jquery-2.1.3.min.js')
+    script(src='/bootstrap/js/bootstrap.min.js')
+    // Inlcude HTML5 Shim and Respond.js for IE8 support of HTML5 elements and media queries 
+
+    
+    script(src='/javascripts/html5shiv.min.js')
+    script(src='/javascripts/respond.min.js')
+    
+    block page_specific_script

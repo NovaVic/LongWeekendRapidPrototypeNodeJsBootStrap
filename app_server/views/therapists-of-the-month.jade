@@ -1,0 +1,44 @@
+extends layout
+
+
+block content
+    h1= title
+
+    div(id='therapists-of-the-month' class='carousel slide' data-ride='carousel') 
+        ol(class="carousel-indicators")
+            li(data-target='#therapists-of-the-month' data-slide-to="0" class='active')
+
+            li(data-target='#therapists-of-the-month' data-slide-to="1")
+
+            li(data-target='#therapists-of-the-month' data-slide-to="2")
+
+        .carousel-inner
+            .item.active
+                img(src='images/fake.jpg')
+                .carousel-caption
+                    p.lead therapist 1
+                            blah blah
+            
+            .item
+                img(src='images/fake2.jpg')
+                .carousel-caption
+                    p.lead therapist 2
+                          blah blah
+            
+            .item
+                img(src='images/fake3.jpg')
+                .carousel-caption
+                   p.lead therapist 3
+                          blah blah
+                          
+            .item
+                img(src='images/fake4.jpg')
+                .carousel-caption
+                    p.lead therapist 4
+                           blah blah
+                     
+            a(class='left arousel-control' href='#therapists-of-the-month' data-slide='prev')
+                span(class='glyphicon glyphicon-chevron-left')
+            span Press the arrow to go back and forth    
+            a(class='left arousel-control' href='#therapists-of-the-month' data-slide='next')
+                span(class='glyphicon glyphicon-chevron-right')

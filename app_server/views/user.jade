@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    if content.about && content.about != ''
+        h5 Detail about #{content.email} is #{content.about}
+    else
+        h5 The user did not fill out personal info/about me section
+    
